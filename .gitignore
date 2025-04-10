@@ -4,6 +4,8 @@ __pycache__/
 db.sqlite3
 .env
 
+venv/
+
 # Django static files
 /staticfiles/
 /media/
