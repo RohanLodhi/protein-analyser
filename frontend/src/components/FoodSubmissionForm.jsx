@@ -8,7 +8,6 @@ const FoodSubmissionForm = () => {
     grams: '',
     total_calories: '',
     total_protein: '',
-    price_per_protein: '',
   });
 
   const handleChange = (e) => {
@@ -19,13 +18,14 @@ const FoodSubmissionForm = () => {
     e.preventDefault();
     await submitFood(form);
     alert('Submitted for review!');
+
+    // Reset the form
     setForm({
       product_name: '',
       total_price: '',
       grams: '',
       total_calories: '',
       total_protein: '',
-      price_per_protein: '',
     });
   };
 
@@ -110,21 +110,6 @@ const FoodSubmissionForm = () => {
           placeholder="Protein (g)"
           type="number"
           value={form.total_protein}
-          onChange={handleChange}
-          required
-          style={{
-            width: '100%',
-            padding: '10px',
-            borderRadius: '5px',
-            border: '1px solid #ccc',
-            marginBottom: '10px',
-          }}
-        />
-        <input
-          name="price_per_protein"
-          placeholder="₹/g Protein"
-          type="number"
-          value={form.price_per_protein}
           onChange={handleChange}
           required
           style={{
